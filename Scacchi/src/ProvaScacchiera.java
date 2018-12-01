@@ -22,7 +22,7 @@ public class ProvaScacchiera{
 
 				boolean isInserito = myScacchiera.aggiungiPezzo (i,j,p);
 				if(isInserito)
-					out.writeln("Pezzo " + p + "inserito in posizione ("+i+","+j+")");
+					out.writeln("Pezzo " + p + " inserito in posizione ("+i+","+j+")");
 				else
 					out.writeln("Posizionamento fallito");
 			}

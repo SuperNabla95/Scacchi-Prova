@@ -30,6 +30,8 @@ public class Scacchiera{
 			return false;
 		if(p==null)
 			return false;
+		if(this.scacchiera[i][j]!=null)
+			return false;
 		this.scacchiera[i][j] = p;
 		return true;
 	}
@@ -77,9 +79,8 @@ public class Scacchiera{
 		List<Pezzo> listaMinacciati = new ArrayList<>();
 		for (int i = 0; i < this.scacchiera.length; ++i){
 			for (int j = 0; j < this.scacchiera[i].length; ++j){
-				Pezzo pezzo_ij = this.scacchiera[i][j];
-				if(pezzo_ij != null && this.minacciatoDaCavallo(i,j,c))
-					listaMinacciati.add(pezzo_ij);
+				if(this.minacciatoDaCavallo(i,j,c))
+					listaMinacciati.add(this.scacchiera[i][j]);
 			}
 		}
 		return listaMinacciati.toArray(new Pezzo[]{});
@@ -89,7 +90,7 @@ public class Scacchiera{
 	tipo e il colore del pezzo che la occupa. */
 	@Override
 	public String toString(){
-		String nessunPezzo = "(X,X)";
+		String nessunPezzo = "(_,_)";
 		int dim = this.scacchiera.length;
 		StringBuilder sb = new StringBuilder();
 		for(int i=0;i<dim;i++){
