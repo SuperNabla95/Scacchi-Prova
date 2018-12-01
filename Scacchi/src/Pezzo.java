@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.HashSet;
-
 public final class Pezzo{
 
 	final static char RE = 'R';
