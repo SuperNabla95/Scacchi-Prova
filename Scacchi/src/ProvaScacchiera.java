@@ -15,8 +15,16 @@ public class ProvaScacchiera{
 			if ( scelta == 1 ){
 				char tipo =  in.readChar("inserisci il tipo");
 				char colore =  in.readChar("Inserisci il colore");
-
-				Pezzo p = new Pezzo(tipo, colore);
+				Pezzo p;
+				try
+				{
+					p = new Pezzo(tipo, colore);
+				}
+				catch(Pezzo.NotValidTypeException nvte)
+				{
+					out.writeln(nvte.getMessage());
+					continue;
+				}
 				int i = in.readInt("inserisci la riga");
 				int j = in.readInt("inserisci la colonna");
 
