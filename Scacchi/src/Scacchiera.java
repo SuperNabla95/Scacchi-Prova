@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Scacchiera{
 
-	private static final int[][] offsetRosaDiCavallo = new int[][]{
+	private static final int[][] offsetsRosaDiCavallo = new int[][]{
 			new int[]{-2,-1},
 			new int[]{-2,+1},
 			new int[]{-1,+2},
@@ -51,7 +51,7 @@ public class Scacchiera{
 		if(pezzo_ij == null)
 			return false;
 		char colore_ij = pezzo_ij.getColore();
-		for(int[] offset : offsetRosaDiCavallo){
+		for(int[] offset : offsetsRosaDiCavallo){
 			int i2,j2;
 			i2 = i + offset[0];
 			j2 = j + offset[1];
